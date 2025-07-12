@@ -12,7 +12,7 @@ import { RevealOnScroll, FloatingElement } from "./animations/ScrollAnimations";
 import { TiltCard, MagneticButton, HoverGlow } from "./animations/InteractiveElements";
 import { Button } from "./ui/button";
 import { Download, Star, Heart, Send, MapPin, Mail, Phone } from "lucide-react";
-const Dhairya = "https://via.placeholder.com/300x300/4F46E5/FFFFFF?text=Profile";
+const ProfileImage = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face";
 
 const socialLinks = [
   {
@@ -267,9 +267,12 @@ const Contact = () => {
 
                           {/* Profile Image */}
                           <img
-                            src={Dhairya}
+                            src={ProfileImage}
                             alt="Abhinav"
                             className="relative z-10 w-64 h-64 max-sm:w-48 max-sm:h-48 rounded-full object-cover shadow-2xl"
+                            onError={(e) => {
+                              e.target.src = "https://via.placeholder.com/256x256/4F46E5/FFFFFF?text=A";
+                            }}
                           />
 
                           {/* Floating Elements */}

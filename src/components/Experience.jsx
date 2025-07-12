@@ -129,6 +129,9 @@ const ExperienceCard = ({ experience, index }) => {
                   src={experience.img} 
                   alt={experience.title}
                   className="w-full h-full object-contain rounded-full"
+                  onError={(e) => {
+                    e.target.src = `https://via.placeholder.com/64x64/4F46E5/FFFFFF?text=${experience.title.charAt(0)}`;
+                  }}
                 />
               </div>
               <motion.div

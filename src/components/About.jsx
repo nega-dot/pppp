@@ -1,11 +1,65 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
-import computer from "../assets/lottie/computer.json";
 import { FadeInText, BlurText, TypewriterText } from "./animations/TextReveal";
 import { FloatingElement, ParallaxContainer } from "./animations/ScrollAnimations";
 import { MagneticButton } from "./animations/InteractiveElements";
 import { Button } from "./ui/button";
 import { ArrowDown, Code, Sparkles } from "lucide-react";
+
+// Fallback animation data for computer animation
+const computerAnimation = {
+  "v": "5.7.4",
+  "fr": 30,
+  "ip": 0,
+  "op": 90,
+  "w": 500,
+  "h": 500,
+  "nm": "Computer Animation",
+  "ddd": 0,
+  "assets": [],
+  "layers": [
+    {
+      "ddd": 0,
+      "ind": 1,
+      "ty": 4,
+      "nm": "Computer",
+      "sr": 1,
+      "ks": {
+        "o": {"a": 0, "k": 100},
+        "r": {"a": 1, "k": [
+          {"i": {"x": [0.833], "y": [0.833]}, "o": {"x": [0.167], "y": [0.167]}, "t": 0, "s": [0]},
+          {"t": 90, "s": [360]}
+        ]},
+        "p": {"a": 0, "k": [250, 250, 0]},
+        "a": {"a": 0, "k": [0, 0, 0]},
+        "s": {"a": 0, "k": [100, 100, 100]}
+      },
+      "ao": 0,
+      "shapes": [
+        {
+          "ty": "gr",
+          "it": [
+            {
+              "ty": "rc",
+              "d": 1,
+              "s": {"a": 0, "k": [200, 150]},
+              "p": {"a": 0, "k": [0, 0]},
+              "r": {"a": 0, "k": 10}
+            },
+            {
+              "ty": "fl",
+              "c": {"a": 0, "k": [0.2, 0.4, 0.8, 1]},
+              "o": {"a": 0, "k": 100}
+            }
+          ]
+        }
+      ],
+      "ip": 0,
+      "op": 90,
+      "st": 0
+    }
+  ]
+};
 
 const About = () => {
   const containerVariants = {
@@ -118,6 +172,7 @@ const About = () => {
             <MagneticButton>
               <Button 
                 className="group bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Code className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform" />
                 View My Work
@@ -128,6 +183,7 @@ const About = () => {
               <Button 
                 variant="outline" 
                 className="group border-2 border-blue-600 text-blue-600 dark:text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg rounded-full transition-all duration-300"
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get In Touch
                 <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
@@ -148,11 +204,17 @@ const About = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-xl blur-xl" />
-                <Lottie
-                  animationData={computer}
-                  loop={true}
-                  className="max-w-[650px] shadow-2xl rounded-xl border border-white/20 dark:border-gray-700/30 backdrop-blur-sm relative z-10"
-                />
+                <div className="max-w-[650px] shadow-2xl rounded-xl border border-white/20 dark:border-gray-700/30 backdrop-blur-sm relative z-10 bg-gradient-to-br from-white/10 to-white/5 p-8">
+                  <Lottie
+                    animationData={computerAnimation}
+                    loop={true}
+                    className="w-full h-full"
+                    onError={() => {
+                      // Fallback to a simple animated div if Lottie fails
+                      console.log("Lottie animation failed, using fallback");
+                    }}
+                  />
+                </div>
               </motion.div>
             </FloatingElement>
           </ParallaxContainer>

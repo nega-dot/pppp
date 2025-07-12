@@ -1,13 +1,42 @@
 import { motion } from "framer-motion";
-import Lottie from "lottie-react";
-import education from "../assets/lottie/education.json";
-const IIIT_KOTA = "https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=IIIT";
+const IIIT_KOTA = "https://images.unsplash.com/photo-1562774053-701939374585?w=150&h=150&fit=crop&crop=center";
 import { ModernCard } from "./ui/ModernCard";
 import { FadeInText, BlurText } from "./animations/TextReveal";
 import { RevealOnScroll, FloatingElement, ParallaxContainer } from "./animations/ScrollAnimations";
 import { TiltCard } from "./animations/InteractiveElements";
 import { Calendar, MapPin, GraduationCap, Award } from "lucide-react";
 
+// Fallback education animation component
+const EducationAnimation = () => {
+  return (
+    <motion.div
+      className="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center"
+      animate={{
+        scale: [1, 1.05, 1],
+        rotate: [0, 2, -2, 0],
+      }}
+      transition={{
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+    >
+      <motion.div
+        className="text-6xl"
+        animate={{
+          y: [0, -10, 0],
+        }}
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        🎓
+      </motion.div>
+    </motion.div>
+  );
+};
 const Education = () => {
   return (
     <section
@@ -78,6 +107,9 @@ const Education = () => {
                         src={IIIT_KOTA}
                         alt="IIIT KOTA"
                         className="w-full h-full object-contain rounded-xl"
+                        onError={(e) => {
+                          e.target.src = "https://via.placeholder.com/80x80/4F46E5/FFFFFF?text=IIIT";
+                        }}
                       />
                     </div>
                     <motion.div
@@ -185,11 +217,7 @@ const Education = () => {
                   
                   {/* Main Animation Container */}
                   <div className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-2xl border border-white/20 dark:border-gray-700/30 shadow-2xl overflow-hidden">
-                    <Lottie
-                      animationData={education}
-                      loop={true}
-                      className="w-full h-full"
-                    />
+                    <EducationAnimation />
                   </div>
 
                   {/* Floating Elements */}

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import React from "react";
 import { ModernCard } from "./ui/ModernCard";
 import { FadeInText, BlurText } from "./animations/TextReveal";
 import { RevealOnScroll, FloatingElement } from "./animations/ScrollAnimations";
@@ -63,6 +64,9 @@ const SkillCard = ({ skill, index }) => {
                       src={skill.img} 
                       alt={skill.name}
                       className="w-full h-full object-contain filter group-hover:brightness-110 transition-all duration-300"
+                      onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/80x80/4F46E5/FFFFFF?text=${skill.name.charAt(0)}`;
+                      }}
                     />
                   </div>
                 </motion.div>
