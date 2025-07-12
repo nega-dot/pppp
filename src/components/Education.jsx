@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import education from "../assets/lottie/education.json";
-import IIIT_KOTA from "../assets/IIIT_Kota.png";
+const IIIT_KOTA = "https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=IIIT";
 import { ModernCard } from "./ui/ModernCard";
 import { FadeInText, BlurText } from "./animations/TextReveal";
 import { RevealOnScroll, FloatingElement, ParallaxContainer } from "./animations/ScrollAnimations";

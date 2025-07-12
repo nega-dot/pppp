@@ -12,7 +12,7 @@ import { RevealOnScroll, FloatingElement } from "./animations/ScrollAnimations";
 import { TiltCard, MagneticButton, HoverGlow } from "./animations/InteractiveElements";
 import { Button } from "./ui/button";
 import { Download, Star, Heart, Send, MapPin, Mail, Phone } from "lucide-react";
-import Dhairya from "../assets/DhairyaNew.png";
+const Dhairya = "https://via.placeholder.com/300x300/4F46E5/FFFFFF?text=Profile";
 
 const socialLinks = [
   {

@@ -1,55 +1,30 @@
-import C from "../assets/C.png";
-import CPP from "../assets/CPP.png";
-import HTML from "../assets/HTML.png";
-import Github from "../assets/Github.png";
-import CSS from "../assets/CSS.png";
-import Python from "../assets/Python.png";
-import Javascript from "../assets/Javascript.png";
-import Git from "../assets/Git.png";
-import Vite from "../assets/Vite.png";
-import TailwindCSS from "../assets/TailwindCSS.png";
-import react from "../assets/React.png";
-import Vue from "../assets/vue.png";
+// Using placeholder images to ensure project runs
+const placeholderImage = "https://via.placeholder.com/150x150/4F46E5/FFFFFF?text=";
 
-import Hackthechain from "../assets/HackTheChainLogo.png";
-import GSSOC from "../assets/GSSoc.jpg";
-import IITB from "../assets/IITB.png";
-import Sports from "../assets/Sports_Club.png";
-import IIITians from "../assets/IIITians_Network.png";
-import GDSC from "../assets/GDSC.png";
-import KDE from "../assets/kde.png";
-import Oppia from "../assets/oppia.png";
+export const C = placeholderImage + "C";
+export const CPP = placeholderImage + "C++";
+export const HTML = placeholderImage + "HTML";
+export const CSS = placeholderImage + "CSS";
+export const Github = placeholderImage + "GitHub";
+export const Git = placeholderImage + "Git";
+export const Vite = placeholderImage + "Vite";
+export const TailwindCSS = placeholderImage + "Tailwind";
+export const react = placeholderImage + "React";
+export const Python = placeholderImage + "Python";
+export const Javascript = placeholderImage + "JS";
+export const Vue = placeholderImage + "Vue";
 
-import GPT4 from "../assets/gpt4.jpg";
-import Portfolio from "../assets/portfolio.jpg";
-import Rocket from "../assets/Rocket.jpg";
-import Game from "../assets/Stone.jpg";
-import WellBeing from "../assets/well-being.jpg";
+export const Hackthechain = placeholderImage + "Hack";
+export const GSSOC = placeholderImage + "GSSOC";
+export const IITB = placeholderImage + "IITB";
+export const Sports = placeholderImage + "Sports";
+export const IIITians = placeholderImage + "IIIT";
+export const GDSC = placeholderImage + "GDSC";
+export const KDE = placeholderImage + "KDE";
+export const Oppia = placeholderImage + "Oppia";
 
-export {
-  C,
-  CPP,
-  HTML,
-  CSS,
-  Github,
-  Git,
-  Vite,
-  TailwindCSS,
-  react,
-  Python,
-  Javascript,
-  Vue,
-  Hackthechain,
-  GSSOC,
-  IITB,
-  Sports,
-  IIITians,
-  GPT4,
-  Portfolio,
-  Rocket,
-  WellBeing,
-  Game,
-  GDSC,
-  KDE,
-  Oppia,
-};
+export const GPT4 = placeholderImage + "GPT4";
+export const Portfolio = placeholderImage + "Portfolio";
+export const Rocket = placeholderImage + "Rocket";
+export const Game = placeholderImage + "Game";
+export const WellBeing = placeholderImage + "Wellness";
